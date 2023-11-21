@@ -2,20 +2,29 @@ plugins {
     id "fabric-loom" version "1.4-SNAPSHOT"
 }
 
-sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
-
-archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
+base {
+    archivesName = project.archives_base_name
+}
+
 repositories {
     maven {
-        name = "Meteor Dev Releases"
+        name = "Meteor Maven Releases"
         url = "https://maven.meteordev.org/releases"
+        content {
+            includeGroup "meteordevelopment"
+            includeGroup "com.github.LlamaLad7.MixinExtras"
+            includeGroup "de.florianmichael"
+        }
     }
     maven {
-        name = "Meteor Dev Snapshots"
+        name = "Meteor Maven Snapshots"
         url = "https://maven.meteordev.org/snapshots"
+        content {
+            includeGroup "meteordevelopment"
+        }
     }
 }
 
@@ -30,8 +39,22 @@ dependencies {
 }
 
 processResources {
+    inputs.properties(["version": project.version, "mc_version": project.minecraft_version])
+
     filesMatching("fabric.mod.json") {
         expand "version": project.version, "mc_version": project.minecraft_version
+    }
+}
+
+java {
+    withSourcesJar()
+
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.archives_base_name}" }
     }
 }
 

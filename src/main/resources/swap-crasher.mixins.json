@@ -1,0 +1,11 @@
+{
+  "required": false,
+  "package": "io.github.racoondog.crasher.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "TickRateMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

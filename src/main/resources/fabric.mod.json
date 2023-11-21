@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "addon-template",
+  "id": "swap-crasher",
   "version": "${version}",
-  "name": "Addon Template",
-  "description": "An addon template for the Meteor addons.",
+  "name": "Swap Crasher",
+  "description": "A Meteor Client addon that implements the swap crash.",
   "authors": [
-    "seasnail"
+    "Crosby"
   ],
   "contact": {
-    "repo": "https://github.com/MeteorDevelopment/meteor-addon-template"
+    "issues": "https://github.com/RacoonDog/SwapCrasher/issues",
+    "sources": "https://github.com/RacoonDog/SwapCrasher"
   },
-  "icon": "assets/template/icon.png",
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "com.example.addon.Addon"
+      "io.github.racoondog.crasher.Crasher"
     ]
   },
   "mixins": [
-    "addon-template.mixins.json"
+    "swap-crasher.mixins.json"
   ],
   "custom": {
-    "meteor-client:color": "225,25,25"
+    "meteor-client:color": "255,85,255"
   },
   "depends": {
     "java": ">=17",

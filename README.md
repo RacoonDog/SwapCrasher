@@ -1,8 +1,5 @@
-# Meteor Addon Template
+# Swap Crasher
 
-A template to allow easy usage of the Meteor Addon API.
+Swap Crasher © 2023 by [Crosby](https://github.com/RacoonDog) is licensed under [CC BY-NC-SA 4.0](https://github.com/RacoonDog/LeftyCrasher/LICENSE)
 
-### How to use:  
-- Clone this project
-- Use this template to create new modules/commands
-- Run the mod with Meteor.
+This software is a feature-complete recode of the source material from the grounds up made by analyzing the behaviour of the original. As such, it is not in violation of its copyright.
