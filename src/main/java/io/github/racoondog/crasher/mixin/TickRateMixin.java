@@ -15,9 +15,7 @@ import org.spongepowered.asm.mixin.Shadow;
 public abstract class TickRateMixin {
     @Shadow private long timeGameJoined;
     @Shadow @Final private float[] tickRates;
-
-    @Shadow
-    private long timeLastTimeUpdate;
+    @Shadow private long timeLastTimeUpdate;
 
     /**
      * @author Crosby
