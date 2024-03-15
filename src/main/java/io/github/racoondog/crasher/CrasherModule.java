@@ -45,6 +45,7 @@ public class CrasherModule extends Module {
         ScreenHandler handler = mc.player.currentScreenHandler;
         Int2ObjectMap<ItemStack> map = new Int2ObjectArrayMap<>();
         map.put(0, new ItemStack(Items.ACACIA_BOAT, 1));
+        ItemStack cursorStack = handler.getCursorStack().copy();
 
         for (int i = 0; i < power.get(); i++) {
             mc.getNetworkHandler().sendPacket(new ClickSlotC2SPacket(
@@ -53,7 +54,7 @@ public class CrasherModule extends Module {
                 36,
                 -1,
                 SlotActionType.SWAP,
-                handler.getCursorStack().copy(),
+                cursorStack,
                 map
             ));
         }
